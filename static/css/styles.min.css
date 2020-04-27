@@ -4,6 +4,16 @@
 
 
 
+html-login {
+  height: 100%;
+}
+body-login {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
 .login-box {
   position: absolute;
   top: 50%;
