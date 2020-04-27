@@ -1,1 +1,171 @@
 .photo-gallery{color:#313437;background-color:#fff}.photo-gallery p{color:#7d8285}.photo-gallery h2{font-weight:700;margin-bottom:40px;padding-top:40px;color:inherit}@media (max-width:767px){.photo-gallery h2{margin-bottom:25px;padding-top:25px;font-size:24px}}.photo-gallery .intro{font-size:16px;max-width:500px;margin:0 auto 40px}.photo-gallery .intro p{margin-bottom:0}.photo-gallery .photos{padding-bottom:20px}.photo-gallery .item{padding-bottom:30px}.login-dark{height:1000px;background:url(/assets/img/star-sky.jpg?h=ad05e28f7a91654cdedf07faa304fcc7) #475d62;background-size:cover;position:relative}.login-dark form{max-width:320px;width:90%;background-color:#1e2833;padding:40px;border-radius:4px;transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;color:#fff;box-shadow:3px 3px 4px rgba(0,0,0,.2)}.login-dark form .btn-primary:active,.newsletter-subscribe form .btn:active{transform:translateY(1px)}.login-dark .illustration{text-align:center;padding:15px 0 20px;font-size:100px;color:#2980ef}.login-dark form .form-control{background:0 0;border:none;border-bottom:1px solid #434a52;border-radius:0;box-shadow:none;outline:0;color:inherit}.login-dark form .btn-primary{background:#214a80;border:none;border-radius:4px;padding:11px;box-shadow:none;margin-top:26px;text-shadow:none;outline:0}.login-dark form .btn-primary:active,.login-dark form .btn-primary:hover{background:#214a80;outline:0}.login-dark form .forgot{display:block;text-align:center;font-size:12px;color:#6f7a85;opacity:.9;text-decoration:none}.login-dark form .forgot:active,.login-dark form .forgot:hover{opacity:1;text-decoration:none}.map-clean{color:#313437;background-color:#fff}.map-clean p{color:#7d8285}.map-clean h2{font-weight:700;margin-bottom:40px;padding-top:40px;color:inherit}@media (max-width:767px){.map-clean h2{margin-bottom:25px;padding-top:25px;font-size:24px}}.map-clean .intro{font-size:16px;max-width:500px;margin:0 auto 40px}.map-clean iframe{background-color:#eee}.navigation-clean{background:#fff;padding-top:.75rem;padding-bottom:.75rem;color:#333;border-radius:0;box-shadow:none;border:none;margin-bottom:0}@media (min-width:768px){.navigation-clean{padding-top:1rem;padding-bottom:1rem}}.navigation-clean .navbar-brand{font-weight:700;color:inherit}.navigation-clean .navbar-brand:hover{color:#222}.navigation-clean .navbar-toggler{border-color:#ddd;color:#888}.navigation-clean .navbar-toggler:focus,.navigation-clean .navbar-toggler:hover{background:0 0}.navigation-clean .form-inline,.navigation-clean .navbar-collapse{border-top-color:#ddd}.navigation-clean.navbar-light .navbar-nav .nav-link.active,.navigation-clean.navbar-light .navbar-nav .nav-link.active:focus,.navigation-clean.navbar-light .navbar-nav .nav-link.active:hover{color:#8f8f8f;box-shadow:none;background:0 0;pointer-events:none}.navigation-clean.navbar .navbar-nav .nav-link{padding-left:18px;padding-right:18px}.navigation-clean.navbar-light .navbar-nav .nav-link{color:#465765}.navigation-clean.navbar-light .navbar-nav .nav-link:focus,.navigation-clean.navbar-light .navbar-nav .nav-link:hover{color:#37434d!important;background-color:transparent}.navigation-clean .navbar-nav>li>.dropdown-menu{margin-top:-5px;box-shadow:none;background-color:#fff;border-radius:2px}.navigation-clean .dropdown-menu .dropdown-item,.navigation-clean .dropdown-menu .dropdown-item:focus{line-height:2;color:#37434d}.navigation-clean .dropdown-menu .dropdown-item:focus,.navigation-clean .dropdown-menu .dropdown-item:hover{background:#eee;color:inherit}.newsletter-subscribe{color:#313437;background-color:#fff;padding:50px 0}.newsletter-subscribe p{color:#7d8285;line-height:1.5}.newsletter-subscribe h2{font-size:24px;font-weight:700;margin-bottom:25px;line-height:1.5;padding-top:0;margin-top:0;color:inherit}.newsletter-subscribe .intro{font-size:16px;max-width:500px;margin:0 auto 25px}.newsletter-subscribe .intro p{margin-bottom:35px}.newsletter-subscribe form{justify-content:center}.newsletter-subscribe form .form-control{background:#eff1f4;border:none;border-radius:3px;box-shadow:none;outline:0;color:inherit;text-indent:9px;height:45px;margin-right:10px;min-width:250px}.newsletter-subscribe form .btn{padding:16px 32px;border:none;background:0 0;box-shadow:none;text-shadow:none;opacity:.9;text-transform:uppercase;font-weight:700;font-size:13px;letter-spacing:.4px;line-height:1}.newsletter-subscribe form .btn:hover{opacity:1}.newsletter-subscribe form .btn-primary{background-color:#055ada!important;color:#fff;outline:0!important}
+
+//////
+
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
