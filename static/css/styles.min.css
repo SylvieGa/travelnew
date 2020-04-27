@@ -6,12 +6,6 @@
 @import "bourbon";
 
 
-
-  .form-signin-heading,
-    .checkbox {
-      margin-bottom: 30px;
-    }
-
     .checkbox {
       font-weight: normal;
     }
