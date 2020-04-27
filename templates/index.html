@@ -64,26 +64,17 @@
             <!-- End: Photos -->
         </div>
     </div>
- <div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="" required="">
-      <label>Password</label>
-    </div>
-    <a href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a>
-  </form>
-</div>  
+ <div class="wrapper">
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    </form>
+  </div>
     <footer class="page-footer">
         <div class="container">
             <div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Tipps for travel</a></div>
