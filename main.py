@@ -23,7 +23,7 @@ def index():
 
 
 @app.route("/index", methods=["GET", "POST"])
-def login():
+def form-signin():
     if request.method == "GET":
     return render_template("index.html")
 
