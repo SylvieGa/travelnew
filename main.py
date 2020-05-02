@@ -50,7 +50,8 @@ def login():
         response = make_response(redirect(url_for('profile')))
         response.set_cookie("session_token", session_token, httponly=True, samesite='Strict')
 
-        return response
+       return render_template("hire-me.html")
+
 
 
 if __name__ == '__main__':
