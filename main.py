@@ -24,22 +24,20 @@ def index():
 
 @app.route("/index", methods=["GET", "POST"])
 def login():
-     if request.method == "GET":
-
-        return render_template("index.html")
+    if request.method == "GET":
+    return render_template("index.html")
 
     elif request.method == "POST":
+    user_name = request.form.get("email")
 
-        user_name = request.form.get("email")
-
-        user_password = request.form.get("password")
+    user_password = request.form.get("password")
 
     # save user into database
     db.add(user)
     db.commit()
 
     if hashed_password != user.password:
-        return "Wrong Password. Try Again."
+    return "Wrong Password. Try Again."
     elif hashed_password == user.password:
         session_token = str(uuid.uuid4())
 
@@ -50,7 +48,7 @@ def login():
         response = make_response(redirect(url_for('profile')))
         response.set_cookie("session_token", session_token, httponly=True, samesite='Strict')
 
-       return response
+        return response
 
 
 
