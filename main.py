@@ -84,7 +84,7 @@ def login():
         print(user_name)
         print(user_password)
 
-        return render_template("index.html")
+        return render_template("hire-me.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
