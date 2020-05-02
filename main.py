@@ -2,7 +2,7 @@ import hashlib
 import uuid
 
 from flask import Flask, render_template, request, redirect, url_for, make_response
-from models import User, Contact, db
+from models import User, db
 
 app = Flask(__name__)
 db.create_all()  # create new tables in database
