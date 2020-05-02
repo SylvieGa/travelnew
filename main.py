@@ -24,15 +24,15 @@ def index():
 
 @app.route("/index", methods=["GET", "POST"])
 def login():
-    email = request.form.get("email")
-    password = request.form.get("password")
+     if request.method == "GET":
 
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+        return render_template("index.html")
 
-    user = db.query(User).filter_by(email=email).first()
+    elif request.method == "POST":
 
-    if not user:
-        user = User(name=name, email=email, password=hashed_password)
+        user_name = request.form.get("email")
+
+        user_password = request.form.get("password")
 
     # save user into database
     db.add(user)
