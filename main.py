@@ -1,90 +1,57 @@
-from flask import Flask, render_template,request, redirect, url_for, make_response
-
-import sqlite3
 import hashlib
-import datetime
 import uuid
 
-#import models.User
+from flask import Flask, render_template, request, redirect, url_for, make_response
+from models import User, Contact, db
 
-app=Flask(__name__)#MODEL
-#db.create_all()
+app = Flask(__name__)
+db.create_all()  # create new tables in database
 
-@app.route("/", methods=["GET"])#CONTROLLER
+
+@app.route("/")  # CONTROLLER
 def index():
-    
- #SQLite3 DB-Connection
+    session_token = request.cookies.get("session_token")
 
-    conn = sqlite3.connect("travellogin.db", check_same_thread=False)
+    if session_token:
+        # get user from the database based on email address
+        user = db.query(User).filter_by(session_token=session_token).first()
 
-    #SQLite3 DB-Cursor
+    else:
+        user = None
 
-    curs = conn.cursor()
+    return render_template("index.html", user=user)
 
+@app.route("/login", methods=["POST"])  # CONTROLLER
+def login():
     email = request.form.get("email")
     password = request.form.get("password")
 
-     # Session_Token abfragen
+    hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
-    session_token = str(request.cookies.get("session_token"))
+    user = db.query(User).filter_by(email=email).first()
 
-    #curs.execute("CREATE TABLE IF NOT EXISTS user(firstname, Id, lastname, city, password);")
-    #curs.execute("INSERT INTO user(firstname, Id, lastname, city, password) VALUES ('Matt', '5', 'Schmidt', 'Cologne', 'PW2020');")
-    #conn.commit()
+    if not user:
+        user = User(name=name, email=email, password=hashed_password)
 
+    # save user into database
+    db.add(user)
+    db.commit()
 
+    if hashed_password != user.password:
+        return "Wrong Password. Try Again."
+    elif hashed_password == user.password:
+        session_token = str(uuid.uuid4())
 
-    #curs.execute("SELECT * FROM user")
+        user.session_token = session_token
+        db.add(user)
+        db.commit()
 
-    #curs.execute("CREATE TABLE IF NOT EXISTS payments(PaymentId integer primary key autoincrement, firstname, lastname, city, adress);")
-    #curs.execute("INSERT INTO payments(firstname, lastname, city, adress) VALUES ('Mat', 'Schmidt', 'Cologne', 'Auf der Domplatte');")
-    #conn.commit()
+        response = make_response(redirect(url_for('profile')))
+        response.set_cookie("session_token", session_token, httponly=True, samesite='Strict')
 
+        return response
 
-    #curs.pretty_print("SELECT * FROM Payments;")
-
-    #curs.execute("CREATE TABLE IF NOT EXISTS products_in_shop(prodductId, productname, in_stock, price);")
-    #curs.execute("INSERT INTO products_in_shop(prodductId, productname, in_stock, price) VALUES ('1', 'Notizbuch', '4', '12');")
-    #conn.commit()
-
-    curs.execute("CREATE TABLE IF NOT EXISTS login(email, password);")
-    curs.execute("""
-            INSERT INTO login (email, password)
-            VALUES (?, ?)
-            """, 
-            (email, password))
-    conn.commit()
-    print(email)
-    print(password)
-
- #SQLite3 DB-Cursor schließen
-
-    curs.close()
-
-    #SQLite3 DB-Connection schließen
-
-    conn.close()
-    return render_template("index.html")#VIEW
-    
-@app.route("/index", methods=["GET", "POST"])
-def login():
-    if request.method == "GET":
-        return render_template("index.html")
-    elif request.method == "POST":
-        user_name = request.form.get("email")
-        user_password = request.form.get("password")
-
-        # create a User object
-        #user = User(name=user_name, email=user_email)
-
-        # save the user object into a database
-        #db.add(user)
-        #db.commit()
-
-        print(user_name)
-        print(user_password)
-
-        return render_template("hire-me.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
