@@ -21,7 +21,8 @@ def index():
 
     return render_template("index.html", user=user)
 
-@app.route("/login", methods=["POST"])  # CONTROLLER
+
+@app.route("/index", methods=["GET", "POST"])
 def login():
     email = request.form.get("email")
     password = request.form.get("password")
