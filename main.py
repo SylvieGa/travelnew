@@ -34,7 +34,7 @@ def form_signin():
         user_password = request.form.get("password")
 
     session_token="1234"
-    user = User(email=user_name, password=user_password, session_token=session_token)
+    user = User(user_name=user_name, user_password=user_password, session_token=session_token)
     # save user into database
     db.add(user)
     db.commit()
@@ -47,4 +47,5 @@ def form_signin():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
     
