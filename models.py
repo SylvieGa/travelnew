@@ -5,7 +5,7 @@ db = SQLAlchemy(os.getenv("DATABASE_URL",
                           "sqlite:///localhost.sqlite"))  # this connects to a database either on Heroku or on localhost
 
 
-class user(db.Model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String, unique=True)  # email must be unique! Two users cannot have the same email address
     password = db.Column(db.String)
