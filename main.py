@@ -15,6 +15,7 @@ def index():
     if session_token:
         # get user from the database based on email address
         user = db.query(User).filter_by(session_token=session_token).first()
+        
 
     else:
         user = None
@@ -23,33 +24,25 @@ def index():
 
 
 @app.route("/index", methods=["GET", "POST"])
-def form-signin():
+def form_signin():
     if request.method == "GET":
-    return render_template("index.html")
+        return render_template("index.html")
 
     elif request.method == "POST":
-    user_name = request.form.get("email")
+        user_name = request.form.get("email")
 
-    user_password = request.form.get("password")
+        user_password = request.form.get("password")
 
+    session_token="1234"
+    user = User(email=user_name, password=user_password, session_token=session_token)
     # save user into database
     db.add(user)
     db.commit()
 
-    if hashed_password != user.password:
-    return "Wrong Password. Try Again."
-    elif hashed_password == user.password:
-        session_token = str(uuid.uuid4())
+   
 
-        user.session_token = session_token
-        db.add(user)
-        db.commit()
-
-        response = make_response(redirect(url_for('profile')))
-        response.set_cookie("session_token", session_token, httponly=True, samesite='Strict')
-
-        return response
-
+    return redirect(url_for('index'))
+    
 
 
 if __name__ == '__main__':
