@@ -50,6 +50,10 @@ def aboutme():
 def todo():
     return render_template("todo.html")
 
+@app.route("/travel")
+def travel():
+    return render_template("travel.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
     
