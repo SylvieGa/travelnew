@@ -43,6 +43,10 @@ def form_signin():
 
     return redirect(url_for('index'))
 
+@app.route("/aboutme")  # CONTROLLER
+def aboutme():
+    return render_template("aboutme.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
