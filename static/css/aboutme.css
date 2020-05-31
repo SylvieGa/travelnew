@@ -23,7 +23,7 @@ body1 {
   margin: 0;
 }
 
-.container {
+.container_flight {
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -44,14 +44,14 @@ body1 {
   margin: 0;
 }
 
-.circle {
+.circle_flight {
   background-color: var(--alternate-color);
   height: 15px;
   width: 15px;
   border-radius: 50%;
 }
 
-.top-container {
+.top-container_flight {
   background-color: var(--primary-color);
   padding: 30px;
   border-top-left-radius: 30px;
@@ -59,20 +59,20 @@ body1 {
   border-bottom: 3px solid var(--light-pink);
 }
 
-.top-container h1 {
+.top-container h1_flight {
   color: var(--secondary-color-blue);
   font-size: 2.5rem;
   font-family: "Quattrocento Sans", sans-serif;
   margin: 0 0 15px 0;
 }
 
-.top-container p {
+.top-container p_flight {
   color: var(--secondary-color-blue);
   font-weight: bold;
   margin: 15px 0 10px 0;
 }
 
-h4 {
+h4_flight {
   border-top: 2px solid var(--light-pink);
   color: var(--light-pink);
   font-size: 0.9rem;
@@ -81,7 +81,7 @@ h4 {
   padding-top: 5px;
 }
 
-.info-container {
+.info-container_flight {
   display: grid;
   grid-column-gap: 15px;
   grid-template-areas:
@@ -109,7 +109,7 @@ h4 {
   grid-area: seat;
 }
 
-.bottom-container {
+.bottom-container_flight {
   height: 380px;
   background-color: var(--secondary-color-blue);
   padding: 30px;
@@ -121,7 +121,7 @@ h4 {
   text-align: center;
 }
 
-.bottom-container h1 {
+.bottom-container h1_flight {
   color: var(--light-pink);
   font-size: 2.5rem;
   font-family: "Quattrocento Sans", sans-serif;
@@ -130,7 +130,7 @@ h4 {
   margin: 0;
 }
 
-.bottom-container p {
+.bottom-container p_flight {
   color: var(--light-pink);
   font-weight: bold;
   font-size: 10px;
@@ -151,31 +151,31 @@ h4 {
   position: relative;
 }
 
-.square {
+.square_flight {
   height: 15px;
   width: 15px;
 }
 
-.left {
+.left_flight {
   background-color: var(--alternate-color);
   position: absolute;
   top: 0;
   left: 0;
 }
-.right {
+.right_flight {
   border: 1px solid var(--primary-color);
   position: absolute;
   top: 0;
   right: 0;
 }
-.middle {
+.middle_flight {
   border: 1px solid var(--alternate-color);
   position: absolute;
   top: 50%;
   left: 0;
 }
 
-.line {
+.line_flight {
   width: 15px;
   border: 1.5px solid var(--primary-color);
   position: absolute;
@@ -183,7 +183,7 @@ h4 {
   left: 0;
 }
 
-.polygon {
+.polygon_flight {
   width: 30px;
   height: 30px;
   border: 1px solid var(--alternate-color);
@@ -192,30 +192,30 @@ h4 {
   left: 40%;
 }
 
-.qr-code img {
+.qr-code img_flight {
   width: 190px;
   height: 190px;
   background-color: var(--primary-color);
   border: 3px solid var(--alternate-color);
 }
 
-.buttons {
+.buttons_flight {
   width: 100%;
   margin: 40px 0 0;
   display: flex;
   justify-content: space-between;
 }
 
-button {
+button_flight {
   font-size: 1rem;
   cursor: pointer;
 }
 
-button:focus {
+button:focus_flight {
   outline: none;
 }
 
-.btn-question {
+.btn-question_flight {
   background-color: transparent;
   color: var(--alternate-color);
   width: 40px;
@@ -225,7 +225,7 @@ button:focus {
   font-weight: bold;
 }
 
-.btn-add {
+.btn-add_flight {
   background-color: var(--alternate-color);
   padding: 10px 50px;
   border-radius: 50px;
