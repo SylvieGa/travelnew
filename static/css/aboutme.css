@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono|Quattrocento+Sans&display=swap");
 
-:root {
+:root_flight {
   --primary-color: #feeae8;
   --dark-pink: #fa7064;
   --light-pink: #fac9c9;
@@ -30,14 +30,14 @@ body1 {
   width: 450px;
 }
 
-.flight {
+.flight_flight {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.flight h2 {
+.flight h2_flight {
   color: var(--secondary-color-blue);
   font-weight: bold;
   font-size: 1.1rem;
@@ -90,22 +90,22 @@ h4_flight {
     "class class zone seat";
 }
 
-.passenger {
+.passenger_flight {
   grid-area: passenger;
 }
-.boarding {
+.boarding_flight {
   grid-area: boarding;
 }
-.gate {
+.gate_flight {
   grid-area: gate;
 }
-.class {
+.class_flight {
   grid-area: class;
 }
-.zone {
+.zone_flight {
   grid-area: zone;
 }
-.seat {
+.seat_flight {
   grid-area: seat;
 }
 
@@ -138,7 +138,7 @@ h4_flight {
   margin: 0;
 }
 
-.airport {
+.airport_flight {
   width: 190px;
   height: 190px;
   display: flex;
