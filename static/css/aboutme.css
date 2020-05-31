@@ -183,7 +183,7 @@ h4_flight {
   left: 0;
 }
 
-.polygon_flight {
+.polygon {
   width: 30px;
   height: 30px;
   border: 1px solid var(--alternate-color);
