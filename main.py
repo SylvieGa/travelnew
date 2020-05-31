@@ -7,10 +7,6 @@ from models import User, db
 app = Flask(__name__)
 db.create_all()  # create new tables in database
 
-@app.route("/aboutme")
-def aboutme():
-return render_template("aboutme.html")
-
 @app.route("/")  # CONTROLLER
 def index():
     session_token = request.cookies.get("session_token")
