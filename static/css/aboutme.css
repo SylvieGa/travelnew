@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono|Quattrocento+Sans&display=swap");
 
-:root_flight {
+:root_ {
   --primary-color: #feeae8;
   --dark-pink: #fa7064;
   --light-pink: #fac9c9;
@@ -175,7 +175,7 @@ h4_flight {
   left: 0;
 }
 
-.line_flight {
+.line {
   width: 15px;
   border: 1.5px solid var(--primary-color);
   position: absolute;
