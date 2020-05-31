@@ -7,6 +7,9 @@ from models import User, db
 app = Flask(__name__)
 db.create_all()  # create new tables in database
 
+@app.route("/aboutme")  # CONTROLLER
+def aboutme():
+    return render_template("aboutme.html")
 
 @app.route("/")  # CONTROLLER
 def index():
@@ -42,10 +45,6 @@ def form_signin():
    
 
     return redirect(url_for('index'))
-
-@app.route("/aboutme")  # CONTROLLER
-def aboutme():
-    return render_template("aboutme.html")
 
 
 if __name__ == '__main__':
