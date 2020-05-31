@@ -7,9 +7,9 @@ from models import User, db
 app = Flask(__name__)
 db.create_all()  # create new tables in database
 
-@app.route("/index")  # CONTROLLER
+@app.route("/aboutme")
 def aboutme():
-    return render_template("aboutme.html")
+return render_template("aboutme.html")
 
 @app.route("/")  # CONTROLLER
 def index():
