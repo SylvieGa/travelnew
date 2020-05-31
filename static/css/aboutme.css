@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono|Quattrocento+Sans&display=swap");
 
-:root_ {
+:root {
   --primary-color: #feeae8;
   --dark-pink: #fa7064;
   --light-pink: #fac9c9;
@@ -151,31 +151,31 @@ h4_flight {
   position: relative;
 }
 
-.square {
+.square_flight {
   height: 15px;
   width: 15px;
 }
 
-.left {
+.left_flight {
   background-color: var(--alternate-color);
   position: absolute;
   top: 0;
   left: 0;
 }
-.right {
+.right_flight {
   border: 1px solid var(--primary-color);
   position: absolute;
   top: 0;
   right: 0;
 }
-.middle {
+.middle_flight {
   border: 1px solid var(--alternate-color);
   position: absolute;
   top: 50%;
   left: 0;
 }
 
-.line {
+.line_flight {
   width: 15px;
   border: 1.5px solid var(--primary-color);
   position: absolute;
@@ -183,7 +183,7 @@ h4_flight {
   left: 0;
 }
 
-.polygon {
+.polygon_flight {
   width: 30px;
   height: 30px;
   border: 1px solid var(--alternate-color);
@@ -192,7 +192,7 @@ h4_flight {
   left: 40%;
 }
 
-.qr-code img {
+.qr-code img_flight {
   width: 190px;
   height: 190px;
   background-color: var(--primary-color);
