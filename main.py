@@ -43,6 +43,7 @@ def form_signin():
 
     return redirect(url_for('index'))
     
+    @app.route("/aboutme")
 
 
 if __name__ == '__main__':
