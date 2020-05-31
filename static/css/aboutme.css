@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono|Quattrocento+Sans&display=swap");
 
-:root_flight {
+:root {
   --primary-color: #feeae8;
   --dark-pink: #fa7064;
   --light-pink: #fac9c9;
@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-body {
+body_flight {
   background-color: #fcfafa;
   font-family: "Fira Mono", monospace;
   display: flex;
